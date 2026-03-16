@@ -48,7 +48,10 @@ st.markdown('<p class="title">🎬 Netflix AI Movie Recommender</p>', unsafe_all
 
 
 # ---------- LOAD DATA ----------
-movies_dict = pickle.load(open("movie_dict.pkl","rb"))
+import pickle
+
+with open("movie_dict.pkl","rb") as f:
+    movies_dict = pickle.load(f)
 movies = pd.DataFrame(movies_dict)
 
 similarity = pickle.load(open("similarity.pkl","rb"))
